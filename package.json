@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-   "start": "node server.js"
-   
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +11,7 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.1",
-    "mysql2": "^3.11.4"
+    "mysql2": "^3.11.4",
+    "nodemon": "^3.1.7"
   }
 }

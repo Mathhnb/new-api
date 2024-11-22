@@ -1,4 +1,4 @@
-const MusicasService = require('../services/musicasService');
+const MusicasService = require('../service/service');
 
 const MusicasController = {
   getAll: async (req, res) => {
@@ -13,6 +13,7 @@ const MusicasController = {
   getById: async (req, res) => {
     try {
       const { id } = req.params;
+      console.log(id)
       const musica = await MusicasService.getById(id);
       if (!musica) return res.status(404).json({ error: 'Música não encontrada' });
       res.json(musica);
@@ -44,7 +45,7 @@ const MusicasController = {
     try {
       const { id } = req.params;
       await MusicasService.delete(id);
-      res.status(204).send(); // Retorna status 204 (sem conteúdo) após a exclusão.
+      res.status(200).json({ msg: 'Sucesso ao deletadar música' });
     } catch (error) {
       res.status(500).json({ error: 'Erro ao deletar música' });
     }

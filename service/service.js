@@ -1,4 +1,4 @@
-const MusicasModel = require('../models/musicasModel');
+const MusicasModel = require('../model/model');
 
 const MusicasService = {
   getAll: async () => {
